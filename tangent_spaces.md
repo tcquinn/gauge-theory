@@ -31,7 +31,7 @@ We define the _tangent space_ at each point of the manifold as the set of deriva
 
 ### Properties
 
-A bunch of properties follow directly from this definition:
+A number of properties follow directly from this definition:
 
 (A) $V_p$ is a vector space. More precisely, if we impose the obvious rules for addition and scalar multiplication on $V_p$, so that $(v_1 + v_2)(f) = v_1(f) + v_2(f)$ and $(av)(f) = av(f)$, then $V_p$ satisfies all of the axioms of a vector space.
 
@@ -40,7 +40,7 @@ $$X_\mu(f) = \frac{\partial}{\partial x^\mu} (f \circ \psi^{-1})\rvert_{\psi(p)}
 are elements of $V_p$, they are linearly independent, and any $v \in V_p$ can be written as a linear combination of these operators $$v = \sum_{\mu = 1}^{n} v^\mu X_\mu$$
 That is, the coordinate derivatives form a _basis_ for $V_p$.
 
-(C) The elements of $V_p$ transform as we expect tangent vectors to transform under coordinate transformations. More precisely, if we pick a different coordinate systems at $p$, $\psi \colon O \rightarrow U$ and $\psi' \colon O' \rightarrow U'$ , the components of $v$ in the $\psi'$ coordinate system are given by $$v'^\nu = \sum_{\mu = 1}^{n} v^\mu \frac{\partial x'^\nu}{\partial x^\mu}$$
+(C) The elements of $V_p$ transform as we expect tangent vectors to transform under coordinate transformations. More precisely, if we pick two different coordinate systems at $p$, $\psi \colon O \rightarrow U$ and $\psi' \colon O' \rightarrow U'$ , the components of $v$ in the $\psi'$ coordinate system are given by $$v'^\nu = \sum_{\mu = 1}^{n} v^\mu \frac{\partial x'^\nu}{\partial x^\mu}$$
 
 (D) $V_p$ corresponds to derivatives with respect to curves through $p$. More precisely, consider any smooth curve $C(t) \colon \mathbb{R} \rightarrow M$ passing through $p \in M$ and define $T$ to be the derivative along this curve
 $$T(f) = \frac{d(f \circ C)}{dt}$$
@@ -53,8 +53,71 @@ I think that the other popular ways to define $V_p$ are to elevate (C) to be the
 
 At this point, we still don't have any natural way to identify tangent spaces $V_p$ and $V_q$ at different points and we don't have any way to take derivatives of vectors. However, we can define a _tangent field_ $v$ as an assignment of a vector at every point $p \in M$. Under this definition, if $f$ is a smooth function from $M$ to $\mathbb{R}$ then $v(f)$ is also a function from $M$ to $\mathbb{R}$. We can then define a _smooth tangent field_ $v$ as one such that $v(f)$ is smooth for any smooth $f$. This gives us a hint of a way to begin to "glue together" tangent spaces at neighboring points.
 
-## Dual vectors
+## Cotangent vectors
 
+### Definition
+
+We define the _cotangent space_ at each point of the manifold as the dual of the tangent space. More precisely, given $V_p$, we define $V^*_p$ as the set of linear maps $f \colon V_p \rightarrow \mathbb{R}$
+
+### Properties
+
+A number of properties follow directly from this definition.
+
+(A) $V^*_p$ is a vector space. More precisely, if we impose the obvious rules for addition and scalar multiplication on $V^*_p$, then $V^*_p$ satisfies all of the axioms of a vector space.
+
+(B) Given any basis for $V_p$, we get a natural corresponding basis for $V^*_p$. More precisely, given a set of basis vectors $v_\mu$ for $V_p$, if we define a set of dual vectors $v^{\mu^*}$ by the rule $$v^{\mu^*}(v_\nu) = \delta^\mu_\nu$$ then this specifies the $v^{\mu^*}$ uniquely and the $v^{\mu^*}$ are a basis for $V^*_p$.
+
+(C) In particular if $v_\mu$ is a coordinate basis for $V_p$, then the definition in (B) gives us a corresponding coordinate basis for $V^*_p$. We tend to write the coordinate basis for $V_p$ as $\partial/\partial x^1,\ldots,\partial/\partial x^n$ and we tend to write the corresponding coordinate basis for $V^*_p$ as $dx^1,\ldots,dx^n$.
+
+(D) The elements of $V^*_p$ transform as we expect cotangent vectors to transform under coordinate transformations. More precisely, if we pick two different coordinate systems at $p$, $\psi \colon O \rightarrow U$ and $\psi' \colon O' \rightarrow U'$ , the components of the cotangent vector $w$ in the $\psi'$ coordinate system are given by $$w'_\nu = \sum_{\mu = 1}^{n} w_\mu \frac{\partial x^\mu}{\partial x'_\nu}$$
+
+### Discussion
+
+Property (B) shows that $V_p$ and $V^*_p$ are isomorphic, but the isomorphism depends on the choice of basis. We still don't have a natural way to identify $V_p$ with $V^*_p$. We need a metric for that.
+
+Not surprisingly, it can pretty easily be shown that $V^{**}_p$, the dual of the cotangent space, is just $V_p$, the tangent space.
+
+We can define a _cotangent vector field_ and a _smooth cotangent vector field_ in precise analogy to the tangent vector field definitions above.
+
+## Tensors on the tangent space
+
+### Definition
+
+We define tensors on the tangent space as multilinear maps from tangent vectors and cotangent vectors to $\mathbb{R}$. More precisely, we define a _tensor of type (k, l)_ on the tangent space as a map $$T \colon \underbrace{V^*_p \times \ldots V^*_p}_{k} \times \underbrace{V_p \times \ldots V_p}_{l} \rightarrow \mathbb{R}$$
+
+### Properties
+
+Not surprisingly, a number of properties follow directly from this definition. The set of tensors of type $(k, l)$ forms a vector space of dimension $(k+l)$. If we choose a basis for $V_p$, we get a natural corresponding basis for this vector space of tensors. Tensors transform in the way we would expect under coordinate transformations. I'm not going to belabor any of this here.
+
+### Discussion
+
+We need to define two other tensor operations before we're ready to discuss derivative operators: contraction and outer product.
+
+Contraction is a map from tensors of type $(k, 1)$ to tensors of type $(k - 1, l - 1)$ by summing over a pair of slots (one dual vector slot and one vector slot). Specifically, if we choose basis vectors $v_\mu$ and construct the corresponding dual basis $v^{\mu^*}$, then the contraction $CT$ of tensor $T$ on the $i$th dual vector slor and $j$th vector slot is given by $$CT = \sum_{\mu = 1}^{n} T(\ldots, v^{\mu^*}, \ldots; \ldots, v_\mu, \ldots)$$
+It can be shown that the result is independent of the choice of basis. This is not the most elegant definition, but it's such a common, simple operation that it never occured to me look for a better one.
+
+The outer product of a type $(k, l)$ tensor $T$ and a type $(k', l')$ tensor $T'$ is the type $(k+k', l+l')$ tensor that you get by simply multiplying the results of the two tensors. More precisely, $$(T \otimes T')(v^1, \ldots, v^k, v^{k+1},\ldots,v^{k+k'}; w_1, \ldots, w_l, w_{l+1},\ldots,w_{l+l'}) = T(v^1, \ldots, v^k; w_1, \ldots, w_l)T'(v^{k+1},\ldots,v^{k+k'}; w_{l+1},\ldots,w_{l+l'})$$
+We usually omit the outer product operator and just write the two tensors adjacent to each other.
+
+We define _tensor fields_ and _smooth tensor fields_ by direct analogy with tangent vector field definitions.
+
+## Derivative operators
+
+We're finally ready to define derivative operators on tensor fields living on the tangent space.
+
+### Definition
+
+A _derivative operator_ $\nabla_a$ is a map which takes each smooth tensor field of type $(k, l)$ to a smooth tensor field of type $(k, l+1)$ and which satisfies the following conditions:
+
+(1) Linearity: Given two tensors of type $(k, l)$ $A$ and $B$ and two real numbers $\alpha$ and $\beta$, $$\nabla_c(\alpha A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} + \beta B^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}) = \alpha \nabla_c A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} + \beta \nabla_c B^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}$$
+
+(2) Leibnitz rule: Given a tensor of type $(k, l)$ $A$ and a tensor of type $(k', l')$ $B$, $$ \nabla_e(A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}}) = (\nabla_e A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l})B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}} + A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}(\nabla_e B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}})$$
+
+(3) Commutativity with contraction: Given a tensor of type $(k, l)$ $A$, $$\nabla_d (A^{a_1 \cdots c \cdots a_k}{}_{b_1 \cdots c \cdots b_l}) = \nabla_d A^{a_1 \cdots c \cdots a_k}{}_{b_1 \cdots c \cdots b_l}$$
+
+(4) Consistency with tangent vectors as directional derivatives: Given $f \in \mathcal{F}$ and $t^a \in V_p$, $$t(f) = t^a\nabla_a f$$
+
+(5) Torsion-free: Given $f \in \mathcal{F}$, $$\nabla_a \nabla_b f = \nabla_b \nabla_a f$$
 
 
 
