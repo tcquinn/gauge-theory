@@ -29,9 +29,7 @@ If we further define the obvious addition and scalar multiplication rules on ele
 (A) $V_p$ is a vector space (that is, it satisfies all of the axioms of a vector space)
 
 (B) If we pick any coordinate system $\psi \colon O \rightarrow U$ where $p \in O$, then the $n$ operators
-$$
-X_\mu(f) = \frac{\partial}{\partial x^\mu} (f \circ \psi^{-1})\rvert_{\psi(p)}
-$$
+$$X_\mu(f) = \frac{\partial}{\partial x^\mu} (f \circ \psi^{-1})\rvert_{\psi(p)}$$
 (i.e., the derivatives with respect to each coordinate) form a basis for $V_p$, so we can express any $v \in V_p$ as
 $$
 v = \sum_{\mu = 1}^{n} v^\mu X_\mu
