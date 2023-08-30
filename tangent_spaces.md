@@ -24,16 +24,14 @@ Next, we define the tangent space $V_p$ at a point $p \in M$. Let $\mathcal{F}$ 
 
 (2) $v(fg) = f(p)v(g) + g(p)v(f)$ (Leibniz condition)
 
-If we further define the obvious addition and scalar multiplication rules on elements of $V_p$ (i.e., $(v_1 + v_2)(f) = v_1(f) + v_2(f)$ and $(av)(f) = av(f)$), then a bunch of properties follow:
+If we further define the obvious addition and scalar multiplication rules on elements of $V_p$ (i.e., $(v_1 + v_2)(f) = v_1(f) + v_2(f)$ and $ (av)(f) = av(f)$), then a bunch of properties follow:
 
 (A) $V_p$ is a vector space (that is, it satisfies all of the axioms of a vector space)
 
 (B) If we pick any coordinate system $\psi \colon O \rightarrow U$ where $p \in O$, then the $n$ operators
 $$X_\mu(f) = \frac{\partial}{\partial x^\mu} (f \circ \psi^{-1})\rvert_{\psi(p)}$$
 (i.e., the derivatives with respect to each coordinate) form a basis for $V_p$, so we can express any $v \in V_p$ as
-$$
-v = \sum_{\mu = 1}^{n} v^\mu X_\mu
-$$
+$$v = \sum_{\mu = 1}^{n} v^\mu X_\mu$$
 
 (C) If we then pick a different coordinate system $\psi' \colon O' \rightarrow U'$, the components of $v$ in this new coordinate system are given by
 $$
@@ -42,13 +40,9 @@ $$
 (i.e., the elements of $V_p$ transform the way we expect tangent vectors to transform under coordinate transformations)
 
 (D) Consider any smooth curve $C(t) \colon \mathbb{R} \rightarrow M$ passing through $p \in M$ and we define $T$ to be the derivative along this curve
-$$
-T(f) = \frac{d(f \circ C)}{dt},
-$$
+$$T(f) = \frac{d(f \circ C)}{dt},$$
 then $T$ is an element of $V_p$. If we further pick a coordinate system at $p$, then the components of $T$ with respect to the coordinate system basis are
-$$
-T^\mu = \frac{dx^\mu}{dt}
-$$
+$$T^\mu = \frac{dx^\mu}{dt}$$
 
 I think that the other popular ways to define $V_p$ are to elevate (C) to be the definition (a tangent vector at $p$ is a thing that transforms in the following way under coordinate transforms) or to elevate (D) to be the definition (a tangent vector is an equivalence class of derivatives with respect to curves passing through $p$), but I definitely it less confusing to think of (C) and (D) to be the consequences of the more abstract definition above.
 
