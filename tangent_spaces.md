@@ -24,7 +24,7 @@ Next, we define the tangent space $V_p$ at a point $p \in M$. Let $\mathcal{F}$ 
 
 (2) $v(fg) = f(p)v(g) + g(p)v(f)$ (Leibniz condition)
 
-If we further define the obvious addition and scalar multiplication rules on elements of $V_p$ (i.e., $(v_1 + v_2)(f) = v_1(f) + v_2(f)$ and $ (av)(f) = av(f)$), then a bunch of properties follow:
+If we further define the obvious addition and scalar multiplication rules on elements of $V_p$ (i.e., $(v_1 + v_2)(f) = v_1(f) + v_2(f)$ and $(av)(f) = av(f)$), then a bunch of properties follow:
 
 (A) $V_p$ is a vector space (that is, it satisfies all of the axioms of a vector space)
 
@@ -34,9 +34,7 @@ $$X_\mu(f) = \frac{\partial}{\partial x^\mu} (f \circ \psi^{-1})\rvert_{\psi(p)}
 $$v = \sum_{\mu = 1}^{n} v^\mu X_\mu$$
 
 (C) If we then pick a different coordinate system $\psi' \colon O' \rightarrow U'$, the components of $v$ in this new coordinate system are given by
-$$
-v'^\nu = \sum_{\mu = 1}^{n} v^\mu \frac{\partial x'^\nu}{\partial x^\mu}
-$$
+$$v'^\nu = \sum_{\mu = 1}^{n} v^\mu \frac{\partial x'^\nu}{\partial x^\mu}$$
 (i.e., the elements of $V_p$ transform the way we expect tangent vectors to transform under coordinate transformations)
 
 (D) Consider any smooth curve $C(t) \colon \mathbb{R} \rightarrow M$ passing through $p \in M$ and we define $T$ to be the derivative along this curve
