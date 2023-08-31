@@ -51,7 +51,7 @@ $$T^\mu = \frac{dx^\mu}{dt}$$
 
 I think that the other popular ways to define $V_p$ are to elevate (C) to be the definition (a tangent vector at $p$ is a thing that transforms in the following way under coordinate transforms) or to elevate (D) to be the definition (a tangent vector is an equivalence class of derivatives with respect to curves passing through $p$), but I definitely it less confusing to think of (C) and (D) to be the consequences of the more abstract definition above.
 
-At this point, we still don't have any natural way to identify tangent spaces $V_p$ and $V_q$ at different points and we don't have any way to take derivatives of vectors. However, we can define a _tangent field_ $v$ as an assignment of a vector at every point $p \in M$. Under this definition, if $f$ is a smooth function from $M$ to $\mathbb{R}$ then $v(f)$ is also a function from $M$ to $\mathbb{R}$. We can then define a _smooth tangent field_ $v$ as one such that $v(f)$ is smooth for any smooth $f$. This gives us a hint of a way to begin to "glue together" tangent spaces at neighboring points.
+At this point, we still don't have any natural way to identify tangent spaces $V_p$ and $V_q$ at different points, we don't have any way to take derivatives of vectors, and we don't know how to parallel transport. However, we can define a _tangent field_ $v$ as an assignment of a vector at every point $p \in M$. Under this definition, if $f$ is a smooth function from $M$ to $\mathbb{R}$ then $v(f)$ is also a function from $M$ to $\mathbb{R}$. We can then define a _smooth tangent field_ $v$ as one such that $v(f)$ is smooth for any smooth $f$. This gives us a hint of a way to begin to "glue together" tangent spaces at neighboring points.
 
 ## Cotangent vectors
 
@@ -63,7 +63,7 @@ We define the _cotangent space_ at each point of the manifold as the dual of the
 
 A number of properties follow directly from this definition.
 
-(A) $V^*_p$ is a vector space. More precisely, if we impose the obvious rules for addition and scalar multiplication on $V^*_p$, then $V^*_p$ satisfies all of the axioms of a vector space.
+(A) $V^{*}_p$ is a vector space. More precisely, if we impose the obvious rules for addition and scalar multiplication on $V^{*}_p$, then $V^{*}_p$ satisfies all of the axioms of a vector space.
 
 (B) Given any basis for $V_p$, we get a natural corresponding basis for $V^*_p$. More precisely, given a set of basis vectors $v_\mu$ for $V_p$, if we define a set of dual vectors $v^{\mu^*}$ by the rule $$v^{\mu^*}(v_\nu) = \delta^\mu_\nu$$ then this specifies the $v^{\mu^*}$ uniquely and the $v^{\mu^*}$ are a basis for $V^*_p$.
 
