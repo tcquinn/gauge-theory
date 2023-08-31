@@ -1,8 +1,8 @@
 # Tangent spaces
 
-Below is the way that I learned to define tangent spaces and related objects on a manifold: vectors, tensors, derivatives of vectors and tensors, etc. I had to go back to Wald (1984) to remind myself of some of the details.
+Below is the way that I learned to define tangent spaces and related objects on a manifold: vectors, tensors, derivatives of vectors and tensors, etc. I had to go back to Wald (1984) to remind myself of the details.
 
-In this story, rather than defining the key objects (e.g., vectors, tensors, derivatives) in terms of how they transform under coordinate transformations, we define them in terms of more fundamental properties and then note that that they transform under coordinate transformations in the ways we expect. This is much less confusing to me. Your mileage may vary.
+In this story, rather than defining the key objects (e.g., vectors, tensors, derivatives) in terms of how they transform under coordinate transformations, we define them in terms of more fundamental properties and then note that, as a consequence of these properties, they transform under coordinate transformations in the ways we expect. This is much less confusing to me. Your mileage may vary.
 
 ## Manifolds
 
@@ -17,7 +17,7 @@ We define a _manifold_ as a set that maps smoothly to $\mathbb{R}^n$ at every po
 (3) The coordinate systems stitch together smoothly. More precisely, whenever two subsets $O_\alpha \cap O_\beta \neq \emptyset$ , the map $\psi_\beta \circ \psi_\alpha^{-1} \colon \mathbb{R}^n \rightarrow \mathbb{R}^n$ is $C^\infty$.
 
 ### Discussion
-More properly, we'd start with a topological space rather than a set and oppose some additional conditions on the interaction between the topology and the coordinate systems and that would give us more structure, but we don't need the extra structure for this discussion.
+More properly, we'd start with a topological space rather than just a set and oppose some additional conditions on the interaction between the topology and the coordinate systems and that would give us more structure, but we don't need the extra structure for this discussion.
 
 ## Tangent vectors
 
@@ -25,9 +25,9 @@ More properly, we'd start with a topological space rather than a set and oppose 
 
 We define the _tangent space_ at each point of the manifold as the set of derivative operators on scalar functions at that point. More precisely, let $\mathcal{F}$ be the collection of $C^\infty$ functions from $M$ into $\mathbb{R}$. Then the tangent space $V_p$ is the collection of maps $v \colon \mathcal{F} \rightarrow \mathbb{R}$ which satisfy:
 
-(1) $v(af + bg) = av(f) + bv(g)$ (linearity)
+(1) Linearity: $v(af + bg) = av(f) + bv(g)$
 
-(2) $v(fg) = f(p)v(g) + g(p)v(f)$ (Leibniz condition)
+(2) Leibniz rule: $v(fg) = f(p)v(g) + g(p)v(f)$
 
 ### Properties
 
@@ -35,14 +35,14 @@ A number of properties follow directly from this definition:
 
 (A) $V_p$ is a vector space. More precisely, if we impose the obvious rules for addition and scalar multiplication on $V_p$, so that $(v_1 + v_2)(f) = v_1(f) + v_2(f)$ and $(av)(f) = av(f)$, then $V_p$ satisfies all of the axioms of a vector space.
 
-(B) If we choose any coordinate system, $V_p$ corresponds to the set of coordinate derivates in that system. More precisely, if we pick any coordinate system $\psi \colon O \rightarrow U$ where $p \in O$, then the $n$ operators
+(B) If we choose any coordinate system $\psi$, then $V_p$ corresponds to the  coordinate derivatives in that system. More precisely, if we pick any coordinate system $\psi \colon O \rightarrow U$ where $p \in O$, then the $n$ operators
 $$X_\mu(f) = \frac{\partial}{\partial x^\mu} (f \circ \psi^{-1})\rvert_{\psi(p)}$$
 are elements of $V_p$, they are linearly independent, and any $v \in V_p$ can be written as a linear combination of these operators $$v = \sum_{\mu = 1}^{n} v^\mu X_\mu$$
 That is, the coordinate derivatives form a _basis_ for $V_p$.
 
 (C) The elements of $V_p$ transform as we expect tangent vectors to transform under coordinate transformations. More precisely, if we pick two different coordinate systems at $p$, $\psi \colon O \rightarrow U$ and $\psi' \colon O' \rightarrow U'$ , the components of $v$ in the $\psi'$ coordinate system are given by $$v'^\nu = \sum_{\mu = 1}^{n} v^\mu \frac{\partial x'^\nu}{\partial x^\mu}$$
 
-(D) $V_p$ corresponds to derivatives with respect to curves through $p$. More precisely, consider any smooth curve $C(t) \colon \mathbb{R} \rightarrow M$ passing through $p \in M$ and define $T$ to be the derivative along this curve
+(D) $V_p$ also corresponds to derivatives with respect to curves through $p$. More precisely, consider any smooth curve $C(t) \colon \mathbb{R} \rightarrow M$ passing through $p \in M$ and define $T$ to be the derivative along this curve
 $$T(f) = \frac{d(f \circ C)}{dt}$$
 Then $T$ is an element of $V_p$. If we further pick a coordinate system at $p$, then the components of $T$ with respect to the coordinate system basis are
 $$T^\mu = \frac{dx^\mu}{dt}$$
@@ -93,7 +93,7 @@ Not surprisingly, a number of properties follow directly from this definition. T
 
 We need to define two other tensor operations before we're ready to discuss derivative operators: contraction and outer product.
 
-Contraction is a map from tensors of type $(k, 1)$ to tensors of type $(k - 1, l - 1)$ by summing over a pair of slots (one dual vector slot and one vector slot). Specifically, if we choose basis vectors $v_\mu$ and construct the corresponding dual basis $v^{\mu^*}$, then the contraction $CT$ of tensor $T$ on the $i$th dual vector slor and $j$th vector slot is given by $$CT = \sum_{\mu = 1}^{n} T(\ldots, v^{\mu^*}, \ldots; \ldots, v_\mu, \ldots)$$
+Contraction is a map from tensors of type $(k, 1)$ to tensors of type $(k - 1, l - 1)$ by summing over a pair of slots (one dual vector slot and one vector slot). Specifically, if we choose basis vectors $v_\mu$ and construct the corresponding dual basis $v^{\mu^*}$, then the contraction $CT$ of tensor $T$ on the $i$-th dual vector slor and $j$-th vector slot is given by $$CT = \sum_{\mu = 1}^{n} T(\ldots, v^{\mu^*}, \ldots; \ldots, v_\mu, \ldots)$$
 It can be shown that the result is independent of the choice of basis. This is not the most elegant definition, but it's such a common, simple operation that it never occured to me look for a better one.
 
 The outer product of a type $(k, l)$ tensor $T$ and a type $(k', l')$ tensor $T'$ is the type $(k+k', l+l')$ tensor that you get by simply multiplying the results of the two tensors. More precisely, $$(T \otimes T')(v^1, \ldots, v^k, v^{k+1},\ldots,v^{k+k'}; w_1, \ldots, w_l, w_{l+1},\ldots,w_{l+l'}) = T(v^1, \ldots, v^k; w_1, \ldots, w_l)T'(v^{k+1},\ldots,v^{k+k'}; w_{l+1},\ldots,w_{l+l'})$$
@@ -109,11 +109,11 @@ We're finally ready to define derivative operators on tensor fields living on th
 
 A _derivative operator_ $\nabla_a$ is a map which takes each smooth tensor field of type $(k, l)$ to a smooth tensor field of type $(k, l+1)$ and which satisfies the following conditions:
 
-(1) Linearity: Given two tensors of type $(k, l)$ $A$ and $B$ and two real numbers $\alpha$ and $\beta$, $$\nabla_c(\alpha A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} + \beta B^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}) = \alpha \nabla_c A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} + \beta \nabla_c B^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}$$
+(1) Linearity: Given $A$ and $B$, two tensors of type $(k, l)$, and $\alpha$ and $\beta$, two real numbers, $$\nabla_c(\alpha A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} + \beta B^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}) = \alpha \nabla_c A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} + \beta \nabla_c B^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}$$
 
-(2) Leibnitz rule: Given a tensor of type $(k, l)$ $A$ and a tensor of type $(k', l')$ $B$, $$ \nabla_e(A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}}) = (\nabla_e A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l})B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}} + A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}(\nabla_e B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}})$$
+(2) Leibnitz rule: Given $A$, a tensor of type $(k, l)$, and $B$, a tensor of type $(k', l')$, $$ \nabla_e(A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}}) = (\nabla_e A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l})B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}} + A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}(\nabla_e B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}})$$
 
-(3) Commutativity with contraction: Given a tensor of type $(k, l)$ $A$, $$\nabla_d (A^{a_1 \cdots c \cdots a_k}{}_{b_1 \cdots c \cdots b_l}) = \nabla_d A^{a_1 \cdots c \cdots a_k}{}_{b_1 \cdots c \cdots b_l}$$
+(3) Commutativity with contraction: Given $A$, a tensor of type $(k, l)$, $$\nabla_d (A^{a_1 \cdots c \cdots a_k}{}_{b_1 \cdots c \cdots b_l}) = \nabla_d A^{a_1 \cdots c \cdots a_k}{}_{b_1 \cdots c \cdots b_l}$$
 
 (4) Consistency with tangent vectors as directional derivatives: Given $f \in \mathcal{F}$ and $t^a \in V_p$, $$t(f) = t^a\nabla_a f$$
 
@@ -126,14 +126,14 @@ Given the set of conditions above, how many derivative operators are there? Zero
 The first thing to note is that, if we choose a coordinate system $\psi \colon M \rightarrow \mathbb{R}$ and we write the components of our tensor $T$ with respect to corresponding tangent vector and cotangent vector bases $\{\partial/\partial x^\mu\}$ and $\{dx^\mu\}$, then in the subset of $M$ covered by $\psi$, we can define the operator $\partial_a$ which simply takes the ordinary gradient of each component of $T$: $$\partial_\alpha T^{\mu_1 \cdots \mu_k}{}_{\nu_1 \cdots \nu_l} = \frac{\partial (T^{\mu_1 \cdots \mu_k}{}_{\nu_1 \cdots \nu_l})}{\partial x^\alpha}$$
 It turns out that this operator satisfies all of the conditions above, so the answer is clearly that there are many derivative operators, at least one for every coordinate system, maybe more.
 
-So how different can two derivative operators be? Choose two different derivative operators $\nabla_a$ and $\tilde{\nabla}_a$ and define a new operator $(\tilde{\nabla}_a - \nabla_a)$which takes an aribtrary cotangent vector field $\omega_a$ and returns the difference between the two derivative operators acting on $\omega_a$. That is: $$(\tilde{\nabla}_a - \nabla_a)(\omega_b) = \tilde{\nabla}_a \omega_b - \nabla_a \omega_b$$
-As written, this is a map of (0, 1) tensor fields to (0, 2) tensor fields. However, it can be "easily" shown (I haven't fully parsed the argument) that, in fact, the value of right side of this equation at a point $p$ depends only on the value of $\omega_a$ at point $p$, not on the variation of $\omega_a$ near point $p$. That is, the operator $(\tilde{\nabla}_a - \nabla_a)$ is a linear operator that takes (0, 1) tensors at each point to (0, 2) tensors at each point. That is, the operator $(\tilde{\nabla}_a - \nabla_a)$ is, in fact, a (1, 2) tensor field. Let's call it $C^c{}_{ab}$.
+So how different can two derivative operators be? Choose two different derivative operators $\nabla_a$ and $\tilde{\nabla}_a$ and define a new operator $(\tilde{\nabla}_a - \nabla_a)$ which takes an aribtrary cotangent vector field $\omega_a$ and returns the difference between the two derivative operators acting on $\omega_a$. That is: $$(\tilde{\nabla}_a - \nabla_a)(\omega_b) = \tilde{\nabla}_a \omega_b - \nabla_a \omega_b$$
+As written, this is a map of (0, 1) tensor fields to (0, 2) tensor fields. However, it can be "easily" shown (I haven't fully parsed the argument) that, in fact, the value of right side of this equation at a point $p$ depends only on the value of $\omega_a$ at point $p$, not on the variation of $\omega_a$ near point $p$. That is, the operator $(\tilde{\nabla}_a - \nabla_a)$ is a linear operator that takes (0, 1) tensors (not tensor fields) at each point to (0, 2) tensors at each point. That is, the operator $(\tilde{\nabla}_a - \nabla_a)$ is, in fact, a (1, 2) tensor field. Let's call it $C^c{}_{ab}$.
 
 By taking derivatives of arbitrary contractions of tensors and using the condition that derivative operators have to agree on scalar fields, we can extend this to a general rule for the difference between any two derivative operators on an arbitrary tensor: $$\nabla_a T^{b_1 \cdots b_k}{}_{c_1 \cdots c_l} = \tilde{\nabla}_a T^{b_1 \cdots b_k}{}_{c_1 \cdots c_l} + \sum_{i} C^{b_i}{}_{ad} T^{b_1 \cdots d \cdots b_k}{}_{c_1 \cdots c_l} - \sum_{j} C^{d}{}_{ac_j} T^{b_1 \cdots b_k}{}_{c_1 \cdots d \cdots c_l}$$
 
-We using the torsion-free condition (5), we can show that $C^c{}_{ab}$ is symmmetric with respect to its tangent vector slots: $$C^c{}_{ab} = C^c{}_{ba}$$
+By using the torsion-free condition (5), we can show that $C^c{}_{ab}$ is symmmetric with respect to its tangent vector slots: $$C^c{}_{ab} = C^c{}_{ba}$$
 
-In the special case where $\nabla_a$ is an arbitrary derivative operator and $\tilde{\nabla}_a$ is the ordinary gradient associated with a coordinate system $\partial_a$, then we call $C^c{}_{ab}$ a _Christoffel symbol_ and we write it as $\Gamma^c_{ab}$.
+In the special case where $\nabla_a$ is an arbitrary derivative operator and $\tilde{\nabla}_a$ is the ordinary gradient associated with a coordinate system $\partial_a$, then we call $C^c{}_{ab}$ a _Christoffel symbol_ and we write it as $\Gamma^c{}_{ab}$.
 
 And that's it. We can't nail down $C^c{}_{ab}$ any further using only the structure of the manifold. If we can't nail down a derivative operator, then we don't know how to parallel transport.
 
