@@ -40,7 +40,7 @@ $$X_\mu(f) = \frac{\partial}{\partial x^\mu} (f \circ \psi^{-1})\rvert_{\psi(p)}
 are elements of $V_p$, they are linearly independent, and any $v \in V_p$ can be written as a linear combination of these operators $$v = \sum_{\mu = 1}^{n} v^\mu X_\mu$$
 That is, the coordinate derivatives form a _basis_ for $V_p$.
 
-(C) The elements of $V_p$ transform as we expect tangent vectors to transform under coordinate transformations. More precisely, if we pick two different coordinate systems at $p$, $\psi \colon O \rightarrow U$ and $\psi' \colon O' \rightarrow U'$ , the components of $v$ in the $\psi'$ coordinate system are given by $$v'^\nu = \sum_{\mu = 1}^{n} v^\mu \frac{\partial x'^\nu}{\partial x^\mu}$$
+(C) The elements of $V_p$ transform as we expect tangent vectors to transform under coordinate transformations. More precisely, if we pick two different coordinate systems at $p$, $\psi \colon O \rightarrow U$ and $\psi^{\prime} \colon O^{\prime} \rightarrow U^{\prime}$ , the components of $v$ in the $\psi'$ coordinate system are given by $$v^{\prime\nu} = \sum_{\mu = 1}^{n} v^\mu \frac{\partial x^{\prime\nu}}{\partial x^\mu}$$
 
 (D) $V_p$ also corresponds to derivatives with respect to curves through $p$. More precisely, consider any smooth curve $C(t) \colon \mathbb{R} \rightarrow M$ passing through $p \in M$ and define $T$ to be the derivative along this curve
 $$T(f) = \frac{d(f \circ C)}{dt}$$
@@ -96,7 +96,7 @@ We need to define two other tensor operations before we're ready to discuss deri
 Contraction is a map from tensors of type $(k, 1)$ to tensors of type $(k - 1, l - 1)$ by summing over a pair of slots (one dual vector slot and one vector slot). Specifically, if we choose basis vectors $v_\mu$ and construct the corresponding dual basis $v^{\mu^\ast}$, then the contraction $CT$ of tensor $T$ on the $i$-th dual vector slor and $j$-th vector slot is given by $$CT = \sum_{\mu = 1}^{n} T(\ldots, v^{\mu^\ast}, \ldots; \ldots, v_\mu, \ldots)$$
 It can be shown that the result is independent of the choice of basis. This is not the most elegant definition, but it's such a common, simple operation that it never occured to me look for a better one.
 
-The outer product of a type $(k, l)$ tensor $T$ and a type $(k', l')$ tensor $T'$ is the type $(k+k', l+l')$ tensor that you get by simply multiplying the results of the two tensors. More precisely, $$(T \otimes T')(v^1, \ldots, v^k, v^{k+1},\ldots,v^{k+k'}; w_1, \ldots, w_l, w_{l+1},\ldots,w_{l+l'}) = T(v^1, \ldots, v^k; w_1, \ldots, w_l)T'(v^{k+1},\ldots,v^{k+k'}; w_{l+1},\ldots,w_{l+l'})$$
+The outer product of a type $(k, l)$ tensor $T$ and a type $(k^{\prime}, l^{\prime})$ tensor $T^{\prime}$ is the type $(k+k^{\prime}, l+l^{\prime})$ tensor that you get by simply multiplying the results of the two tensors. More precisely, $$(T \otimes T^{\prime})(v^1, \ldots, v^k, v^{k+1},\ldots,v^{k+k^{\prime}}; w_1, \ldots, w_l, w_{l+1},\ldots,w_{l+l^{\prime}}) = T(v^1, \ldots, v^k; w_1, \ldots, w_l)T^{\prime}(v^{k+1},\ldots,v^{k+k^{\prime}}; w_{l+1},\ldots,w_{l+l^{\prime}})$$
 We usually omit the outer product operator and just write the two tensors adjacent to each other.
 
 We define _tensor fields_ and _smooth tensor fields_ by direct analogy with tangent vector field definitions.
@@ -111,7 +111,7 @@ A _derivative operator_ $\nabla_a$ is a map which takes each smooth tensor field
 
 (1) Linearity: Given $A$ and $B$, two tensors of type $(k, l)$, and $\alpha$ and $\beta$, two real numbers, $$\nabla_c(\alpha A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} + \beta B^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}) = \alpha \nabla_c A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} + \beta \nabla_c B^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}$$
 
-(2) Leibnitz rule: Given $A$, a tensor of type $(k, l)$, and $B$, a tensor of type $(k', l')$, $$ \nabla_e(A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}}) = (\nabla_e A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l})B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}} + A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}(\nabla_e B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}})$$
+(2) Leibnitz rule: Given $A$, a tensor of type $(k, l)$, and $B$, a tensor of type $(k^{\prime}, l^{\prime})$, $$ \nabla_e(A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}B^{c_1 \cdots c_{k^{\prime}}}{}_{d_1 \cdots d_{l^{\prime}}}) = (\nabla_e A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l})B^{c_1 \cdots c_{k^{\prime}}}{}_{d_1 \cdots d_{l^{\prime}}} + A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}(\nabla_e B^{c_1 \cdots c_{k^{\prime}}}{}_{d_1 \cdots d_{l^{\prime}}})$$
 
 (3) Commutativity with contraction: Given $A$, a tensor of type $(k, l)$, $$\nabla_d (A^{a_1 \cdots c \cdots a_k}{}_{b_1 \cdots c \cdots b_l}) = \nabla_d A^{a_1 \cdots c \cdots a_k}{}_{b_1 \cdots c \cdots b_l}$$
 
