@@ -63,7 +63,7 @@ We define the _cotangent space_ at each point of the manifold as the dual of the
 
 A number of properties follow directly from this definition.
 
-(A) $V^{*}_p$ is a vector space. More precisely, if we impose the obvious rules for addition and scalar multiplication on $V^{*}_p$, then $V^{*}_p$ satisfies all of the axioms of a vector space.
+(A) $V^\ast_p$ is a vector space. More precisely, if we impose the obvious rules for addition and scalar multiplication on $V^\ast_p$, then $V^\ast_p$ satisfies all of the axioms of a vector space.
 
 (B) Given any basis for $V_p$, we get a natural corresponding basis for $V^*_p$. More precisely, given a set of basis vectors $v_\mu$ for $V_p$, if we define a set of dual vectors $v^{\mu^*}$ by the rule $$v^{\mu^*}(v_\nu) = \delta^\mu_\nu$$ then this specifies the $v^{\mu^*}$ uniquely and the $v^{\mu^*}$ are a basis for $V^*_p$.
 
