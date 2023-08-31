@@ -43,10 +43,7 @@ That is, the coordinate derivatives form a _basis_ for $V_p$.
 (C) The elements of $V_p$ transform as we expect tangent vectors to transform under coordinate transformations. More precisely, if we pick two different coordinate systems at $p$, $\psi \colon O \rightarrow U$ and $\psi^{\prime} \colon O^{\prime} \rightarrow U^{\prime}$ , the components of $v$ in the $\psi'$ coordinate system are given by $$v^{\prime\nu} = \sum_{\mu = 1}^{n} v^\mu \frac{\partial x^{\prime\nu}}{\partial x^\mu}$$
 
 (D) $V_p$ also corresponds to derivatives with respect to curves through $p$. More precisely, consider any smooth curve $C(t) \colon \mathbb{R} \rightarrow M$ passing through $p \in M$ and define $T$ to be the derivative along this curve
-
-$$
-T(f) = \frac{d(f \circ C)}{dt}
-$$
+$$T(f) = \frac{d(f \circ C)}{dt}$$
 
 Then $T$ is an element of $V_p$. If we further pick a coordinate system at $p$, then the components of $T$ with respect to the coordinate system basis are
 $$T^\mu = \frac{dx^\mu}{dt}$$
@@ -73,7 +70,7 @@ A number of properties follow directly from this definition.
 
 (C) In particular if $v_\mu$ is a coordinate basis for $V_p$, then the definition in (B) gives us a corresponding coordinate basis for $V^\ast_p$. We tend to write the coordinate basis for $V_p$ as $\partial/\partial x^1,\ldots,\partial/\partial x^n$ and we tend to write the corresponding coordinate basis for $V^\ast_p$ as $dx^1,\ldots,dx^n$.
 
-(D) The elements of $V^\ast_p$ transform as we expect cotangent vectors to transform under coordinate transformations. More precisely, if we pick two different coordinate systems at $p$, $\psi \colon O \rightarrow U$ and $\psi^{\prime} \colon O^{\prime} \rightarrow U^{\prime}$ , the components of the cotangent vector $w$ in the $\psi^{\prime}$ coordinate system are given by $$w^{\prime}_\nu = \sum_{\mu = 1}^{n} w_\mu \frac{\partial x^\mu}{\partial x^{\prime}_\nu}$$
+(D) The elements of $V^\ast_p$ transform as we expect cotangent vectors to transform under coordinate transformations. More precisely, if we pick two different coordinate systems at $p$, $\psi \colon O \rightarrow U$ and $\psi^{\prime} \colon O^{\prime} \rightarrow U^{\prime}$ , the components of the cotangent vector $w$ in the $\psi^{\prime}$ coordinate system are given by $$w'_\nu = \sum_{\mu = 1}^{n} w_\mu \frac{\partial x^\mu}{\partial x'_\nu}$$
 
 ### Discussion
 
