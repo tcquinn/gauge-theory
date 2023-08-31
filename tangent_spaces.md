@@ -70,7 +70,17 @@ A number of properties follow directly from this definition.
 
 (C) In particular if $v_\mu$ is a coordinate basis for $V_p$, then the definition in (B) gives us a corresponding coordinate basis for $V^\ast_p$. We tend to write the coordinate basis for $V_p$ as $\partial/\partial x^1,\ldots,\partial/\partial x^n$ and we tend to write the corresponding coordinate basis for $V^\ast_p$ as $dx^1,\ldots,dx^n$.
 
-(D) The elements of $V^\ast_p$ transform as we expect cotangent vectors to transform under coordinate transformations. More precisely, if we pick two different coordinate systems at $p$, $\psi \colon O \rightarrow U$ and $\psi^{\prime} \colon O^{\prime} \rightarrow U^{\prime}$ , the components of the cotangent vector $w$ in the $\psi^{\prime}$ coordinate system are given by $$w'_\nu = \sum_{\mu = 1}^{n} w_\mu \frac{\partial x^\mu}{\partial x'_\nu}$$
+(D) The elements of $V^\ast_p$ transform as we expect cotangent
+vectors to transform under coordinate transformations. More precisely,
+if we pick two different coordinate systems at $p$, $\psi \colon O
+\rightarrow U$ and $\psi^{\prime} \colon O^{\prime} \rightarrow
+U^{\prime}$ , the components of the cotangent vector $w$ in the
+$\psi^{\prime}$ coordinate system are given by 
+
+$$
+w'_\nu = \sum_\mu^n w_\mu \frac{\partial x^\mu}{\partial x'_\nu}
+$$
+
 
 ### Discussion
 
