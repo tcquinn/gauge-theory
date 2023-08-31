@@ -12,12 +12,12 @@ We define a _manifold_ as a set that maps smoothly to $\mathbb{R}^n$ at every po
 
 (1) The subsets $O_\alpha$ cover $M$. More precisely, each $p \in M$ lies in at least one $O_\alpha$.
 
-(2) Each $O_\alpha$ has a corresponding coordinate system. More precisely, for each $\alpha$, there is a one-to-one, onto map $\psi_\alpha \colon O_\alpha \rightarrow U_\alpha$ where $U_\alpha$ is an open subset of $\mathbb{R}^n$. We call these maps _charts_ or _coordinate systems_.
+(2) Each $O_\alpha$ has a corresponding coordinate system. More precisely, for each $\alpha$, there is a one-to-one, onto map $\psi_\alpha : O_\alpha \rightarrow U_\alpha$ where $U_\alpha$ is an open subset of $\mathbb{R}^n$. We call these maps _charts_ or _coordinate systems_.
 
 (3) The coordinate systems stitch together smoothly. More precisely, whenever two subsets $O_\alpha \cap O_\beta \neq \emptyset$ , the map $\psi_\beta \circ \psi_\alpha^{-1} \colon \mathbb{R}^n \rightarrow \mathbb{R}^n$ is $C^\infty$.
 
 ### Discussion
-More properly, we'd start with a topological space rather than just a set and oppose some additional conditions on the interaction between the topology and the coordinate systems and that would give us more structure, but we don't need the extra structure for this discussion.
+More properly, we'd start with a topological space rather than just a set and impose some additional conditions on the interaction between the topology and the coordinate systems and that would give us more structure, but we don't need the extra structure for this discussion.
 
 ## Tangent vectors
 
@@ -109,29 +109,89 @@ We're finally ready to define derivative operators on tensor fields living on th
 
 A _derivative operator_ $\nabla_a$ is a map which takes each smooth tensor field of type $(k, l)$ to a smooth tensor field of type $(k, l+1)$ and which satisfies the following conditions:
 
-(1) Linearity: Given $A$ and $B$, two tensors of type $(k, l)$, and $\alpha$ and $\beta$, two real numbers, $$\nabla_c(\alpha A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} + \beta B^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}) = \alpha \nabla_c A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} + \beta \nabla_c B^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}$$
+(1) Linearity: Given $A$ and $B$, two tensors of type $(k, l)$, and
+$\alpha$ and $\beta$, two real numbers, 
+$$
+\nabla_c(\alpha A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} + \beta B^{a_1
+\cdots a_k}{}_{b_1 \cdots b_l}) = \alpha \nabla_c A^{a_1 \cdots
+a_k}{}_{b_1 \cdots b_l} + \beta \nabla_c B^{a_1 \cdots a_k}{}_{b_1
+\cdots b_l}
+$$
 
-(2) Leibnitz rule: Given $A$, a tensor of type $(k, l)$, and $B$, a tensor of type $(k^{\prime}, l^{\prime})$, $$ \nabla_e(A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}B^{c_1 \cdots c_{k^{\prime}}}{}_{d_1 \cdots d_{l^{\prime}}}) = (\nabla_e A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l})B^{c_1 \cdots c_{k^{\prime}}}{}_{d_1 \cdots d_{l^{\prime}}} + A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}(\nabla_e B^{c_1 \cdots c_{k^{\prime}}}{}_{d_1 \cdots d_{l^{\prime}}})$$
+(2) Leibnitz rule: Given $A$, a tensor of type $(k, l)$, and $B$, a
+tensor of type $(k^{\prime}, l^{\prime})$, 
+$$ 
+\nabla_e(A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}B^{c_1 \cdots
+c_{k^{\prime}}}{}_{d_1 \cdots d_{l^{\prime}}}) = (\nabla_e A^{a_1
+\cdots a_k}{}_{b_1 \cdots b_l})B^{c_1 \cdots c_{k^{\prime}}}{}_{d_1
+\cdots d_{l^{\prime}}} + A^{a_1 \cdots a_k}{}_{b_1 \cdots
+b_l}(\nabla_e B^{c_1 \cdots c_{k^{\prime}}}{}_{d_1 \cdots
+d_{l^{\prime}}})
+$$
 
-(3) Commutativity with contraction: Given $A$, a tensor of type $(k, l)$, $$\nabla_d (A^{a_1 \cdots c \cdots a_k}{}_{b_1 \cdots c \cdots b_l}) = \nabla_d A^{a_1 \cdots c \cdots a_k}{}_{b_1 \cdots c \cdots b_l}$$
+(3) Commutativity with contraction: Given $A$, a tensor of type $(k,
+l)$, 
+$$
+\nabla_d (A^{a_1 \cdots c \cdots a_k}{}_{b_1 \cdots c \cdots b_l}) =
+\nabla_d A^{a_1 \cdots c \cdots a_k}{}_{b_1 \cdots c \cdots b_l}
+$$
 
-(4) Consistency with tangent vectors as directional derivatives: Given $f \in \mathcal{F}$ and $t^a \in V_p$, $$t(f) = t^a\nabla_a f$$
+(4) Consistency with tangent vectors as directional derivatives: Given
+$f \in \mathcal{F}$ and $t^a \in V_p$, 
+$$
+\t(f) = t^a\nabla_a f
+$$
 
-(5) Torsion-free: Given $f \in \mathcal{F}$, $$\nabla_a \nabla_b f = \nabla_b \nabla_a f$$
+(5) Torsion-free: Given $f \in \mathcal{F}$, 
+$$
+\nabla_a \nabla_b f = \nabla_b \nabla_a f
+$$
 
 ### Discussion
 
 Given the set of conditions above, how many derivative operators are there? Zero? One? Many?
 
-The first thing to note is that, if we choose a coordinate system $\psi \colon M \rightarrow \mathbb{R}$ and we write the components of our tensor $T$ with respect to corresponding tangent vector and cotangent vector bases $\{\partial/\partial x^\mu\}$ and $\{dx^\mu\}$, then in the subset of $M$ covered by $\psi$, we can define the operator $\partial_a$ which simply takes the ordinary gradient of each component of $T$: $$\partial_\alpha T^{\mu_1 \cdots \mu_k}{}_{\nu_1 \cdots \nu_l} = \frac{\partial (T^{\mu_1 \cdots \mu_k}{}_{\nu_1 \cdots \nu_l})}{\partial x^\alpha}$$
+The first thing to note is that, if we choose a coordinate system
+$\psi \colon M \rightarrow \mathbb{R}$ and we write the components of
+our tensor $T$ with respect to corresponding tangent vector and
+cotangent vector bases $\{\partial/\partial x^\mu\}$ and $\{dx^\mu\}$,
+then in the subset of $M$ covered by $\psi$, we can define the
+operator $\partial_a$ which simply takes the ordinary gradient of each
+component of $T$: 
+$$
+\partial_\alpha T^{\mu_1 \cdots \mu_k}{}_{\nu_1 \cdots \nu_l} =
+\frac{\partial (T^{\mu_1 \cdots \mu_k}{}_{\nu_1 \cdots
+\nu_l})}{\partial x^\alpha}
+$$
 It turns out that this operator satisfies all of the conditions above, so the answer is clearly that there are many derivative operators, at least one for every coordinate system, maybe more.
 
-So how different can two derivative operators be? Choose two different derivative operators $\nabla_a$ and $\tilde{\nabla}_a$ and define a new operator $(\tilde{\nabla}_a - \nabla_a)$ which takes an aribtrary cotangent vector field $\omega_a$ and returns the difference between the two derivative operators acting on $\omega_a$. That is: $$(\tilde{\nabla}_a - \nabla_a)(\omega_b) = \tilde{\nabla}_a \omega_b - \nabla_a \omega_b$$
+So how different can two derivative operators be? Choose two different
+derivative operators $\nabla_a$ and $\tilde{\nabla}_a$ and define a
+new operator $(\tilde{\nabla}_a - \nabla_a)$ which takes an aribtrary
+cotangent vector field $\omega_a$ and returns the difference between
+the two derivative operators acting on $\omega_a$. That is: 
+$$
+(\tilde{\nabla}_a - \nabla_a)(\omega_b) = \tilde{\nabla}_a \omega_b -
+\nabla_a \omega_b
+$$
 As written, this is a map of (0, 1) tensor fields to (0, 2) tensor fields. However, it can be "easily" shown (I haven't fully parsed the argument) that, in fact, the value of right side of this equation at a point $p$ depends only on the value of $\omega_a$ at point $p$, not on the variation of $\omega_a$ near point $p$. That is, the operator $(\tilde{\nabla}_a - \nabla_a)$ is a linear operator that takes (0, 1) tensors (not tensor fields) at each point to (0, 2) tensors at each point. That is, the operator $(\tilde{\nabla}_a - \nabla_a)$ is, in fact, a (1, 2) tensor field. Let's call it $C^c{}_{ab}$.
 
-By taking derivatives of arbitrary contractions of tensors and using the condition that derivative operators have to agree on scalar fields, we can extend this to a general rule for the difference between any two derivative operators on an arbitrary tensor: $$\nabla_a T^{b_1 \cdots b_k}{}_{c_1 \cdots c_l} = \tilde{\nabla}_a T^{b_1 \cdots b_k}{}_{c_1 \cdots c_l} + \sum_{i} C^{b_i}{}_{ad} T^{b_1 \cdots d \cdots b_k}{}_{c_1 \cdots c_l} - \sum_{j} C^{d}{}_{ac_j} T^{b_1 \cdots b_k}{}_{c_1 \cdots d \cdots c_l}$$
+By taking derivatives of arbitrary contractions of tensors and using
+the condition that derivative operators have to agree on scalar
+fields, we can extend this to a general rule for the difference
+between any two derivative operators on an arbitrary tensor: 
+$$
+\nabla_a T^{b_1 \cdots b_k}{}_{c_1 \cdots c_l} = \tilde{\nabla}_a
+T^{b_1 \cdots b_k}{}_{c_1 \cdots c_l} + \sum_{i} C^{b_i}{}_{ad} T^{b_1
+\cdots d \cdots b_k}{}_{c_1 \cdots c_l} - \sum_{j} C^{d}{}_{ac_j}
+T^{b_1 \cdots b_k}{}_{c_1 \cdots d \cdots c_l}
+$$
 
-By using the torsion-free condition (5), we can show that $C^c{}_{ab}$ is symmmetric with respect to its tangent vector slots: $$C^c{}_{ab} = C^c{}_{ba}$$
+By using the torsion-free condition (5), we can show that $C^c{}_{ab}$
+is symmmetric with respect to its tangent vector slots: 
+$$
+C^c{}_{ab} = C^c{}_{ba}
+$$
 
 In the special case where $\nabla_a$ is an arbitrary derivative operator and $\tilde{\nabla}_a$ is the ordinary gradient associated with a coordinate system $\partial_a$, then we call $C^c{}_{ab}$ a _Christoffel symbol_ and we write it as $\Gamma^c{}_{ab}$.
 
