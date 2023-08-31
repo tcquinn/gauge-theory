@@ -57,7 +57,7 @@ At this point, we still don't have any natural way to identify tangent spaces $V
 
 ### Definition
 
-We define the _cotangent space_ at each point of the manifold as the dual of the tangent space. More precisely, given $V_p$, we define $V^*_p$ as the set of linear maps $f \colon V_p \rightarrow \mathbb{R}$
+We define the _cotangent space_ at each point of the manifold as the dual of the tangent space. More precisely, given $V_p$, we define $V^\ast_p$ as the set of linear maps $f \colon V_p \rightarrow \mathbb{R}$
 
 ### Properties
 
@@ -65,17 +65,17 @@ A number of properties follow directly from this definition.
 
 (A) $V^\ast_p$ is a vector space. More precisely, if we impose the obvious rules for addition and scalar multiplication on $V^\ast_p$, then $V^\ast_p$ satisfies all of the axioms of a vector space.
 
-(B) Given any basis for $V_p$, we get a natural corresponding basis for $V^*_p$. More precisely, given a set of basis vectors $v_\mu$ for $V_p$, if we define a set of dual vectors $v^{\mu^*}$ by the rule $$v^{\mu^*}(v_\nu) = \delta^\mu_\nu$$ then this specifies the $v^{\mu^*}$ uniquely and the $v^{\mu^*}$ are a basis for $V^*_p$.
+(B) Given any basis for $V_p$, we get a natural corresponding basis for $V^\ast_p$. More precisely, given a set of basis vectors $v_\mu$ for $V_p$, if we define a set of dual vectors $v^{\mu^\ast}$ by the rule $$v^{\mu^\ast}(v_\nu) = \delta^\mu_\nu$$ then this specifies the $v^{\mu^\ast}$ uniquely and the $v^{\mu^\ast}$ are a basis for $V^\ast_p$.
 
-(C) In particular if $v_\mu$ is a coordinate basis for $V_p$, then the definition in (B) gives us a corresponding coordinate basis for $V^*_p$. We tend to write the coordinate basis for $V_p$ as $\partial/\partial x^1,\ldots,\partial/\partial x^n$ and we tend to write the corresponding coordinate basis for $V^*_p$ as $dx^1,\ldots,dx^n$.
+(C) In particular if $v_\mu$ is a coordinate basis for $V_p$, then the definition in (B) gives us a corresponding coordinate basis for $V^\ast_p$. We tend to write the coordinate basis for $V_p$ as $\partial/\partial x^1,\ldots,\partial/\partial x^n$ and we tend to write the corresponding coordinate basis for $V^\ast_p$ as $dx^1,\ldots,dx^n$.
 
-(D) The elements of $V^*_p$ transform as we expect cotangent vectors to transform under coordinate transformations. More precisely, if we pick two different coordinate systems at $p$, $\psi \colon O \rightarrow U$ and $\psi' \colon O' \rightarrow U'$ , the components of the cotangent vector $w$ in the $\psi'$ coordinate system are given by $$w'_\nu = \sum_{\mu = 1}^{n} w_\mu \frac{\partial x^\mu}{\partial x'_\nu}$$
+(D) The elements of $V^\ast_p$ transform as we expect cotangent vectors to transform under coordinate transformations. More precisely, if we pick two different coordinate systems at $p$, $\psi \colon O \rightarrow U$ and $\psi' \colon O' \rightarrow U'$ , the components of the cotangent vector $w$ in the $\psi'$ coordinate system are given by $$w'_\nu = \sum_{\mu = 1}^{n} w_\mu \frac{\partial x^\mu}{\partial x'_\nu}$$
 
 ### Discussion
 
-Property (B) shows that $V_p$ and $V^*_p$ are isomorphic, but the isomorphism depends on the choice of basis. We still don't have a natural way to identify $V_p$ with $V^*_p$. We need a metric for that.
+Property (B) shows that $V_p$ and $V^\ast_p$ are isomorphic, but the isomorphism depends on the choice of basis. We still don't have a natural way to identify $V_p$ with $V^\ast_p$. We need a metric for that.
 
-Not surprisingly, it can pretty easily be shown that $V^{**}_p$, the dual of the cotangent space, is just $V_p$, the tangent space.
+Not surprisingly, it can pretty easily be shown that $V^{\ast\ast}_p$, the dual of the cotangent space, is just $V_p$, the tangent space.
 
 We can define a _cotangent vector field_ and a _smooth cotangent vector field_ in precise analogy to the tangent vector field definitions above.
 
@@ -83,7 +83,7 @@ We can define a _cotangent vector field_ and a _smooth cotangent vector field_ i
 
 ### Definition
 
-We define tensors on the tangent space as multilinear maps from tangent vectors and cotangent vectors to $\mathbb{R}$. More precisely, we define a _tensor of type (k, l)_ on the tangent space as a map $$T \colon \underbrace{V^*_p \times \ldots V^*_p}_{k} \times \underbrace{V_p \times \ldots V_p}_{l} \rightarrow \mathbb{R}$$
+We define tensors on the tangent space as multilinear maps from tangent vectors and cotangent vectors to $\mathbb{R}$. More precisely, we define a _tensor of type (k, l)_ on the tangent space as a map $$T \colon \underbrace{V^\ast_p \times \ldots V^\ast_p}_{k} \times \underbrace{V_p \times \ldots V_p}_{l} \rightarrow \mathbb{R}$$
 
 ### Properties
 
@@ -93,7 +93,7 @@ Not surprisingly, a number of properties follow directly from this definition. T
 
 We need to define two other tensor operations before we're ready to discuss derivative operators: contraction and outer product.
 
-Contraction is a map from tensors of type $(k, 1)$ to tensors of type $(k - 1, l - 1)$ by summing over a pair of slots (one dual vector slot and one vector slot). Specifically, if we choose basis vectors $v_\mu$ and construct the corresponding dual basis $v^{\mu^*}$, then the contraction $CT$ of tensor $T$ on the $i$-th dual vector slor and $j$-th vector slot is given by $$CT = \sum_{\mu = 1}^{n} T(\ldots, v^{\mu^*}, \ldots; \ldots, v_\mu, \ldots)$$
+Contraction is a map from tensors of type $(k, 1)$ to tensors of type $(k - 1, l - 1)$ by summing over a pair of slots (one dual vector slot and one vector slot). Specifically, if we choose basis vectors $v_\mu$ and construct the corresponding dual basis $v^{\mu^\ast}$, then the contraction $CT$ of tensor $T$ on the $i$-th dual vector slor and $j$-th vector slot is given by $$CT = \sum_{\mu = 1}^{n} T(\ldots, v^{\mu^\ast}, \ldots; \ldots, v_\mu, \ldots)$$
 It can be shown that the result is independent of the choice of basis. This is not the most elegant definition, but it's such a common, simple operation that it never occured to me look for a better one.
 
 The outer product of a type $(k, l)$ tensor $T$ and a type $(k', l')$ tensor $T'$ is the type $(k+k', l+l')$ tensor that you get by simply multiplying the results of the two tensors. More precisely, $$(T \otimes T')(v^1, \ldots, v^k, v^{k+1},\ldots,v^{k+k'}; w_1, \ldots, w_l, w_{l+1},\ldots,w_{l+l'}) = T(v^1, \ldots, v^k; w_1, \ldots, w_l)T'(v^{k+1},\ldots,v^{k+k'}; w_{l+1},\ldots,w_{l+l'})$$
