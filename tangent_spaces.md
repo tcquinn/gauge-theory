@@ -119,6 +119,25 @@ A _derivative operator_ $\nabla_a$ is a map which takes each smooth tensor field
 
 (5) Torsion-free: Given $f \in \mathcal{F}$, $$\nabla_a \nabla_b f = \nabla_b \nabla_a f$$
 
+### Discussion
+
+Given the set of conditions above, how many derivative operators are there? Zero? One? Many?
+
+The first thing to note is that, if we choose a coordinate system $\psi \colon M \rightarrow \mathbb{R}$ and we write the components of our tensor $T$ with respect to corresponding tangent vector and cotangent vector bases $\{\partial/\partial x^\mu\}$ and $\{dx^\mu\}$, then in the subset of $M$ covered by $\psi$, we can define the operator $\partial_a$ which simply takes the ordinary gradient of each component of $T$: $$\partial_\alpha T^{\mu_1 \cdots \mu_k}{}_{\nu_1 \cdots \nu_l} = \frac{\partial (T^{\mu_1 \cdots \mu_k}{}_{\nu_1 \cdots \nu_l})}{\partial x^\alpha}$$
+It turns out that this operator satisfies all of the conditions above, so the answer is clearly that there are many derivative operators, at least one for every coordinate system, maybe more.
+
+So how different can two derivative operators be? Choose two different derivative operators $\nabla_a$ and $\tilde{\nabla}_a$ and define a new operator $(\tilde{\nabla}_a - \nabla_a)$which takes an aribtrary cotangent vector field $\omega_a$ and returns the difference between the two derivative operators acting on $\omega_a$. That is: $$(\tilde{\nabla}_a - \nabla_a)(\omega_b) = \tilde{\nabla}_a \omega_b - \nabla_a \omega_b$$
+As written, this is a map of (0, 1) tensor fields to (0, 2) tensor fields. However, it can be "easily" shown (I haven't fully parsed the argument) that, in fact, the value of right side of this equation at a point $p$ depends only on the value of $\omega_a$ at point $p$, not on the variation of $\omega_a$ near point $p$. That is, the operator $(\tilde{\nabla}_a - \nabla_a)$ is a linear operator that takes (0, 1) tensors at each point to (0, 2) tensors at each point. That is, the operator $(\tilde{\nabla}_a - \nabla_a)$ is, in fact, a (1, 2) tensor field. Let's call it $C^c{}_{ab}$.
+
+By taking derivatives of arbitrary contractions of tensors and using the condition that derivative operators have to agree on scalar fields, we can extend this to a general rule for the difference between any two derivative operators on an arbitrary tensor: $$\nabla_a T^{b_1 \cdots b_k}{}_{c_1 \cdots c_l} = \tilde{\nabla}_a T^{b_1 \cdots b_k}{}_{c_1 \cdots c_l} + \sum_{i} C^{b_i}{}_{ad} T^{b_1 \cdots d \cdots b_k}{}_{c_1 \cdots c_l} - \sum_{j} C^{d}{}_{ac_j} T^{b_1 \cdots b_k}{}_{c_1 \cdots d \cdots c_l}$$
+
+We using the torsion-free condition (5), we can show that $C^c{}_{ab}$ is symmmetric with respect to its tangent vector slots: $$C^c{}_{ab} = C^c{}_{ba}$$
+
+In the special case where $\nabla_a$ is an arbitrary derivative operator and $\tilde{\nabla}_a$ is the ordinary gradient associated with a coordinate system $\partial_a$, then we call $C^c{}_{ab}$ a _Christoffel symbol_ and we write it as $\Gamma^c_{ab}$.
+
+And that's it. We can't nail down $C^c{}_{ab}$ any further using only the structure of the manifold. If we can't nail down a derivative operator, then we don't know how to parallel transport.
+
+If we define a metric $g_{ab}$ and impose the condition that $\nabla_a g_{bc} = 0$, then that specifies $\nabla_a$ uniquely and we get...seven years of grad school.
 
 
 
