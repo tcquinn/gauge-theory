@@ -12,12 +12,12 @@ We define a _manifold_ as a set that maps smoothly to $\mathbb{R}^n$ at every po
 
 (1) The subsets $O_\alpha$ cover $M$. More precisely, each $p \in M$ lies in at least one $O_\alpha$.
 
-(2) Each $O_\alpha$ has a corresponding coordinate system. More precisely, for each $\alpha$, there is a one-to-one, onto map $\psi_\alpha \colon O_\alpha \rightarrow U_\alpha$ where $U_\alpha$ is an open subset of $\mathbb{R}^n$. We call these maps _charts_ or _coordinate systems_.
+(2) Each $O_\alpha$ has a corresponding coordinate system. More precisely, for each $\alpha$, there is a one-to-one, onto map $\psi_\alpha : O_\alpha \rightarrow U_\alpha$ where $U_\alpha$ is an open subset of $\mathbb{R}^n$. We call these maps _charts_ or _coordinate systems_.
 
 (3) The coordinate systems stitch together smoothly. More precisely, whenever two subsets $O_\alpha \cap O_\beta \neq \emptyset$ , the map $\psi_\beta \circ \psi_\alpha^{-1} \colon \mathbb{R}^n \rightarrow \mathbb{R}^n$ is $C^\infty$.
 
 ### Discussion
-More properly, we'd start with a topological space rather than just a set and oppose some additional conditions on the interaction between the topology and the coordinate systems and that would give us more structure, but we don't need the extra structure for this discussion.
+More properly, we'd start with a topological space rather than just a set and impose some additional conditions on the interaction between the topology and the coordinate systems and that would give us more structure, but we don't need the extra structure for this discussion.
 
 ## Tangent vectors
 
@@ -187,6 +187,7 @@ By using the torsion-free condition (5), we can show that $C^c{}_{ab}$ is symmme
 ```math
 C^c{}_{ab} = C^c{}_{ba}
 ```
+
 
 In the special case where $\nabla_a$ is an arbitrary derivative operator and $`\tilde{\nabla}_a`$ is the ordinary gradient associated with a coordinate system $\partial_a$, then we call $`C^c{}_{ab}`$ a _Christoffel symbol_ and we write it as $`\Gamma^c{}_{ab}`$.
 
