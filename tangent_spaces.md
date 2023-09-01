@@ -176,7 +176,7 @@ So how different can two derivative operators be? Choose two different derivativ
 ```math
 (\tilde{\nabla}_a - \nabla_a)(\omega_b) = \tilde{\nabla}_a \omega_b - \nabla_a \omega_b
 ```
-As written, this is a map of (0, 1) tensor fields to (0, 2) tensor fields. However, it can be "easily" shown (I haven't fully parsed the argument) that, in fact, the value of right side of this equation at a point $p$ depends only on the value of $\omega_a$ at point $p$, not on the variation of $\omega_a$ near point $p$. That is, the operator $(\tilde{\nabla}_a - \nabla_a)$ is a linear operator that takes (0, 1) tensors (not tensor fields) at each point to (0, 2) tensors at each point. That is, the operator $`(\tilde^{\nabla}_a - \nabla_a)`$ is, in fact, a (1, 2) tensor field. Let's call it $C^c{}_{ab}$.
+As written, this is a map of (0, 1) tensor fields to (0, 2) tensor fields. However, it can be "easily" shown (I haven't fully parsed the argument) that, in fact, the value of right side of this equation at a point $p$ depends only on the value of $\omega_a$ at point $p$, not on the variation of $\omega_a$ near point $p$. That is, the operator $(\tilde{\nabla}_a - \nabla_a)$ is a linear operator that takes (0, 1) tensors (not tensor fields) at each point to (0, 2) tensors at each point. That is, the operator $`\tilde{\nabla}_a - \nabla_a`$ is, in fact, a (1, 2) tensor field. Let's call it $C^c{}_{ab}$.
 
 By taking derivatives of arbitrary contractions of tensors and using the condition that derivative operators have to agree on scalar fields, we can extend this to a general rule for the difference between any two derivative operators on an arbitrary tensor:
 ```math
