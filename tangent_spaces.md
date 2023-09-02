@@ -55,9 +55,9 @@ v^{\prime\nu} = \sum_{\mu = 1}^{n} v^\mu \frac{\partial x^{\prime\nu}}{\partial 
 T(f) = \frac{d(f \circ C)}{dt}\biggr\rvert_p
 ```
 Defined in this way, $T$ is clearly a map from the space of smooth scalar functions $\mathcal{F}$ to $\mathbb{R}$ at $p$. Therefore, to show that $T \in V_p$, we just have to show that it satisfies the two conditions above, but clearly
-$$
-T(cf) = \frac{d((af+bg) \circ C)}{dt}\biggr\rvert_p = a\frac{d(f \circ C)}{dt}\biggr\rvert_p + b\frac{d(g \circ C)}{dt}\biggr\rvert_p = aT(f) + bT(g)
-$$
+```math
+T(af + bg) = \frac{d((af+bg) \circ C)}{dt}\biggr\rvert_p = a\frac{d(f \circ C)}{dt}\biggr\rvert_p + b\frac{d(g \circ C)}{dt}\biggr\rvert_p = aT(f) + bT(g)
+```
 for $a,b \in \mathbb{R}$ and $f,g \in \mathcal{F}$ and
 ```math
 T(fg) = \frac{d(fg \circ C)}{dt}\biggr\rvert_p = f\frac{d(g \circ C)}{dt}\biggr\rvert_p + g\frac{d(f \circ C)}{dt}\biggr\rvert_p = fT(g) + gT(f)
