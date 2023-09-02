@@ -50,14 +50,31 @@ That is, the coordinate derivatives form a _basis_ for $V_p$.
 v^{\prime\nu} = \sum_{\mu = 1}^{n} v^\mu \frac{\partial x^{\prime\nu}}{\partial x^\mu}
 ```
 
-(D) $V_p$ also corresponds to derivatives with respect to curves through $p$. More precisely, consider any smooth curve $C(t) \colon \mathbb{R} \rightarrow M$ passing through $p \in M$ and define $T$ to be the derivative along this curve
+(D) $V_p$ also corresponds to derivatives with respect to curves through $p$. More precisely, every derivative with respect to a curve passing through point $p$ is an element of $V_p$, and every element of $V_p$ can be written as the derivative with respect to some curve through $p$ (actually, many curves through $p$). To see this, consider any smooth curve $C(t) \colon \mathbb{R} \rightarrow M$ passing through $p \in M$ and define $T$ to be the derivative along this curve at point $p$:
 ```math
-T(f) = \frac{d(f \circ C)}{dt}
+T(f) = \frac{d(f \circ C)}{dt}\biggr\rvert_p
 ```
-Then $T$ is an element of $V_p$. If we further pick a coordinate system at $p$, then the components of $T$ with respect to the coordinate system basis are
+Defined in this way, $T$ is clearly a map from the space of smooth scalar functions $\mathcal{F}$ to $\mathbb{R}$ at $p$. Therefore, to show that $T \in V_p$, we just have to show that it satisfies the two conditions above, but clearly
 ```math
-T^\mu = \frac{dx^\mu}{dt}
+T(cf) = \frac{d(cf \circ C)}{dt}\biggr\rvert_p = c\frac{d(f \circ C)}{dt}\biggr\rvert_p = cT(f)
 ```
+for $c \in \mathbb{R}$ and
+```math
+T(fg) = \frac{d(fg \circ C)}{dt}\biggr\rvert_p = f\frac{d(g \circ C)}{dt}\biggr\rvert_p + g\frac{d(f \circ C)}{dt}\biggr\rvert_p = fT(g) + gT(f)
+```
+for $f, g \in \mathcal{f}$. To show that every $v \in V_p$ can be written as the derivative through some curve at $p$, choose a basis $\psi \colon M \rightarrow \mathbb{R}^n$ at $p$ and write $v$ in terms of the coordinate basis:
+```math
+v(f) = \sum_{\mu = 1}^{n} v^\mu X_\mu(f) = \sum_{\mu = 1}^{n} v^\mu \frac{\partial f}{\partial x^\mu}
+```
+Now consider the curve $C$ through $p$ defined by
+```math
+(\psi \circ C) = (x^1_p + v^1 t,\ldots,x^n_p + v^n t)
+```
+where $(x^1_p ,\ldots,x^n_p) = \psi(p)$. Then clearly
+```math
+T(f) = \frac{d(f \circ C)}{dt}\biggr\rvert_p = \frac{d}{dt} f(x^1_p + v^1 t,\ldots,x^n_p + v^n t) = \sum_{\mu = 1}^{n} v^\mu \frac{\partial f}{\partial x^\mu} = v(f)
+```
+so $v(f)$ is, in fact, the derivative of $f$ along $C$. It's also clear that we could have picked many other curves $C$ that would map to $v$ (roughly, adding any number of higher order terms).
 
 ### Discussion
 
