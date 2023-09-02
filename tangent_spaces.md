@@ -56,13 +56,13 @@ T(f) = \frac{d(f \circ C)}{dt}\biggr\rvert_p
 ```
 Defined in this way, $T$ is clearly a map from the space of smooth scalar functions $\mathcal{F}$ to $\mathbb{R}$ at $p$. Therefore, to show that $T \in V_p$, we just have to show that it satisfies the two conditions above, but clearly
 ```math
-T(cf) = \frac{d(cf \circ C)}{dt}\biggr\rvert_p = c\frac{d(f \circ C)}{dt}\biggr\rvert_p = cT(f)
+T(af + bg) = \frac{d((af+bg) \circ C)}{dt}\biggr\rvert_p = a\frac{d(f \circ C)}{dt}\biggr\rvert_p + b\frac{d(g \circ C)}{dt}\biggr\rvert_p = aT(f) + bT(g)
 ```
-for $c \in \mathbb{R}$ and
+for $a,b \in \mathbb{R}$ and $f,g \in \mathcal{F}$ and
 ```math
 T(fg) = \frac{d(fg \circ C)}{dt}\biggr\rvert_p = f\frac{d(g \circ C)}{dt}\biggr\rvert_p + g\frac{d(f \circ C)}{dt}\biggr\rvert_p = fT(g) + gT(f)
 ```
-for $f, g \in \mathcal{f}$. To show that every $v \in V_p$ can be written as the derivative through some curve at $p$, choose a basis $\psi \colon M \rightarrow \mathbb{R}^n$ at $p$ and write $v$ in terms of the coordinate basis:
+for $f, g \in \mathcal{F}$. To show that every $v \in V_p$ can be written as the derivative through some curve at $p$, choose a basis $\psi \colon M \rightarrow \mathbb{R}^n$ at $p$ and write $v$ in terms of the coordinate basis:
 ```math
 v(f) = \sum_{\mu = 1}^{n} v^\mu X_\mu(f) = \sum_{\mu = 1}^{n} v^\mu \frac{\partial f}{\partial x^\mu}
 ```
