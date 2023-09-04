@@ -1,3 +1,6 @@
+<!-- -*- fill-column: 64; eval: (auto-fill-mode -1); eval: (visual-fill-column-mode 1); eval: (visual-line-mode 1); eval: (adaptive-wrap-prefix-mode 1) -*- -->
+
+
 # Tangent spaces
 
 Below is the way that I learned to define tangent spaces and related objects on a manifold: vectors, tensors, derivatives of vectors and tensors, etc. I had to go back to Wald (1984) to remind myself of the details.
@@ -39,6 +42,7 @@ A number of properties follow directly from this definition:
 ```math
 X_\mu(f) = \frac{\partial}{\partial x^\mu} (f \circ \psi^{-1})\rvert_{\psi(p)}
 ```
+
 are elements of $V_p$, they are linearly independent, and any $v \in V_p$ can be written as a linear combination of these operators
 ```math
 v = \sum_{\mu = 1}^{n} v^\mu X_\mu
