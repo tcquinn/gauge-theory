@@ -42,6 +42,7 @@ A number of properties follow directly from this definition:
 ```math
 X_\mu(f) = \frac{\partial}{\partial x^\mu} (f \circ \psi^{-1})\rvert_{\psi(p)}
 ```
+
 are elements of $V_p$, they are linearly independent, and any $v \in V_p$ can be written as a linear combination of these operators
 ```math
 v = \sum_{\mu = 1}^{n} v^\mu X_\mu
