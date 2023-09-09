@@ -1,0 +1,75 @@
+%% -*- fill-column: 72; eval: (auto-fill-mode -1); eval: (visual-fill-column-mode 1); eval: (visual-line-mode 1); eval: (adaptive-wrap-prefix-mode 1) -*-
+\documentclass[10pt, a4paper, twocolumn]{article}
+%%
+\usepackage[T1]{fontenc}
+\usepackage{concrete}
+\usepackage{eulervm}
+%%
+%\usepackage{fancyhdr}
+\usepackage[margin=0.51in]{geometry}
+\usepackage{parskip}
+%%
+\usepackage{amsmath}
+%%
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{3pt}
+%%
+\usepackage[style=authoryear]{biblatex}
+\addbibresource{gauge-theory.bib}
+%%
+%%
+\newcommand{\defn}[1]{\textbf{\textsf{#1}}}
+\newcommand{\set}[1]{\mathbold{#1}}
+\newcommand{\reals}{\set{R}}
+%%
+\title{Glossary of Known Math}
+\date{}
+\author{}
+%%
+\begin{document}
+%%
+\addtolength\abovedisplayskip{-0.5\baselineskip}%
+\addtolength\belowdisplayskip{-0.5\baselineskip}%
+%\addtolength\abovedisplayshortskip{-0.5\baselineskip}%
+%\addtolength\belowdisplayshortskip{-0.5\baselineskip}%
+%%
+\maketitle
+\section*{Manifolds}
+\begin{tabularx}{\columnwidth}{@{}p{0.23\columnwidth}>{\raggedright\arraybackslash}X@{}}
+  \toprule
+  $\defn{Manifold}$ & A topological space, $M$, together with an \emph{atlas} of \emph{charts}, $\{(U_i, \phi_i)\}$, where $U_i$ is an open set in $M$ and $\phi_i$ is a homeomorphism from $U_i$ to an open set in $\reals^n$, such that:
+  \begin{enumerate}
+  \item $\cup_i U_i = M$; and
+  \item $\phi_j \circ \phi_i^{-1}$ is smooth on $U_i \cap U_j$.
+  \end{enumerate} \\
+
+  \defn{Curve} (in $M$) & A smooth map $C:\lambda \mapsto x(\lambda)$ from an open set in $\reals$ to $M$. \\
+
+  $T_P M$ & The \defn{tangent space} to $M$ at point $P$. An equivalence class of curves passing through $P$, where two curves are equivalent if $df/d\lambda$ at $P$ is the same for both for any smooth function $f:M \to \reals$. \\
+
+  \defn{Vector} (at $P$) & An element of $T_P M$, noting that $T_P M$ is, in fact, an $n$-dimensional vector space.\\
+  
+  \defn{Tensor space} (at $P$) & Either $T_P M$ or a multilinear map from tensor spaces (at $P$) to $\reals$ with the various natural isomorphisms between these and their tensor products.
+
+  E.g., the \emph{cotangent space} at $P$, $T^*_P M$, is the vector space of linear maps $T_P M\to\reals$.
+
+  E.g., a \emph{tensor of type $(k, l)$} is an element of the space
+  \begin{equation*}
+    \mathfrak{T}^k_l = (T_P \otimes \overset{k}{\dotsb} \otimes T_P) \otimes (T^*_P \otimes \overset{l}{\dotsb} \otimes T^*_P).  
+  \end{equation*} \\
+\end{tabularx}
+
+%% \section*{Differential forms}
+%% \begin{tabularx}{\columnwidth}{@{}p{0.23\columnwidth}>{\raggedright\arraybackslash}X@{}}
+%%   \toprule
+%% \end{tabularx}
+
+
+
+
+
+\printbibliography%
+\end{document}
