@@ -2,7 +2,7 @@
 
 # Exterior forms
 
-Fix a vector space $V$. One obtains further vector spaces built from a combination of $V$ and $V^* $, its dual. For example, $V \otimes V$, $V \otimes V^*$, $V \otimes V \otimes V$, and so on. There are natural isomorphisms (for finite-dimensional $V$) between these vector spaces and the spaces of linear maps on the same collection. For example, $V \otimes V^* \simeq \mathop{\rm Lin}(V; V)$. 
+Fix a vector space $V$. One obtains further vector spaces built from a combination of $V$ and $V^* $, its dual. For example, $V \otimes V$, $V \otimes V^* $, $V \otimes V \otimes V$, and so on. There are natural isomorphisms (for finite-dimensional $V$) between these vector spaces and the spaces of linear maps on the same collection. For example, $V \otimes V^* \simeq \mathop{\rm Lin}(V; V)$. 
 
 A tensor of type $(0, p)$ is _totally antisymmetric_ if its action on any $p$ vectors changes sign under interchange of any two of the vectors. On a vector space of dimension $n$, tensors of type $(0, p)$ form a vector space of dimension $C^n_p$. An alternative name for this vector space is the space of _$p$-forms_ (“over $V$” or “at $P$”). 
 
