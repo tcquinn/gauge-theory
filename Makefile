@@ -1,4 +1,4 @@
-html_out = tangent_spaces.html
+html_out = tangent_spaces.html exterior_forms.html
 
 all: $(html_out)
 
