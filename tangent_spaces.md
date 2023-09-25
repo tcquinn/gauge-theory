@@ -206,7 +206,7 @@ C^c{}_{ab} = C^c{}_{ba}
 ```
 
 
-In the special case where $\nabla_a$ is an arbitrary derivative operator and $`\tilde{\nabla}_a`$ is the ordinary gradient associated with a coordinate system $\partial_a$, then we call $`C^c{}_{ab}`$ a _Christoffel symbol_ and we write it as $`\Gamma^c{}_{ab}`$.
+In the special case where $\nabla_a$ is an arbitrary derivative operator and $`\tilde{\nabla}_a`$ is the ordinary gradient associated with a coordinate system $\partial_a$, then we call $`C^c{}_{ab}`$ a _Christoffel symbol_ and we write it as \(\Gamma^c{}_{ab}\).
 
 And that's it. We can't nail down $C^c{}_{ab}$ any further using only the structure of the manifold. If we can't nail down a derivative operator, then we don't know how to parallel transport.
 
