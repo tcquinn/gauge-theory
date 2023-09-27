@@ -1,3 +1,5 @@
+<!-- -*- fill-column: 64; eval: (auto-fill-mode -1); eval: (visual-fill-column-mode 1); eval: (visual-line-mode 1); eval: (adaptive-wrap-prefix-mode 1) -*- -->
+
 # Differential forms
 
 ## Note on sources
