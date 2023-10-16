@@ -5,7 +5,7 @@
 ## Note on sources
 *The Geometry of Kerr Black Holes* by Barrett O'Neill. I found this presentation to be very clean, but a too brief. O'Neill only include what he needs for the Kerr Geometry, which is one-forms and two-forms, and a specific result for three-forms. O'Neill inspired me to look for another source that gives the same clean treatment, but is more complete. I found it!
 
-*Geometry of Differential Forms* by Shigeyuki Morita. This appears to be the Geometry book of my dreams. The first chapter on Manifolds is familiar, including tangent vectors, tangent spaces, vector fields, and the commutator of vector fields. (Lie groups are among the example manifolds in Chapter 1.) Chapter 2 develops differential forms without any reference to a metric, a derivative operator, or a connection. Differential forms, exterior products, and exterior derivatives are all defined without any reference to coordinates. Formulas using coordinates and coordinate derivatives are also given, with proofs. Chapter 3 on the de Rham Theorem is an important step toward characteristic classes, the book's ultimate goal. Chapter 4 investigates Riemannian manifolds with the Hodge $*$-operator, the Laplacian, and harmonic forms. Chapter 5 on vector bundles includes the tangent bundle and the covariant derivative. Chapter 6, the final chapter, is about fiber bundles. Both chapter 5 and 6 discuss connections, curvature and characteristic classes. Why didn't we use this book in Graduate school? It wasn't published until 1997...in Japanese. The English translation was published in 2000.
+*Geometry of Differential Forms* by Shigeyuki Morita. This appears to be the Geometry book of my dreams. The first chapter on Manifolds is familiar, including tangent vectors, tangent spaces, vector fields, and the commutator of vector fields. (Lie groups are among the example manifolds in Chapter 1.) Chapter 2 develops differential forms without any reference to a metric, a derivative operator, or a connection. Differential forms, exterior products, and exterior derivatives are all defined without any reference to coordinates. Formulas using coordinates and coordinate derivatives are also given, with proofs. Chapter 3 on the de Rham Theorem is an important step toward characteristic classes, the book's ultimate goal. Chapter 4 investigates Riemannian manifolds with the Hodge $*$-operator, the Laplacian, and harmonic forms. Chapter 5 on vector bundles includes the tangent bundle and covariant derivatives. Chapter 6, the final chapter, is about fiber bundles. Both chapter 5 and 6 discuss connections, curvature and characteristic classes. Why didn't we use this book in Graduate school? It wasn't published until 1997...in Japanese. The English translation was published in 2000.
 
 ## One-forms (O'Neill p. 6)
 
@@ -19,7 +19,7 @@ In particular, this yields the famous formula $df = \sum \frac{\partial f}{\part
 
 The wedge product of two one-forms is given by 
 ```math
-  (\theta\wedge\phi)(v,w) = \begin{vmatrix} \theta(v) & \theta(w) \\\\ \phi(v) & \phi(w) \end{vmatrix} 
+  (\theta\wedge\phi)(v,w) = \begin{vmatrix} \theta(v) & \theta(w) \\ \phi(v) & \phi(w) \end{vmatrix} 
   \qquad
   \text{for all tangent vectors $v$, $w$.}
 ```
